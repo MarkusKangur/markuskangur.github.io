@@ -2,7 +2,7 @@
 title: "Home"
 ---
 
-This is a Quarto website.
+Welcome to my personal website. I am a masters student at the DOSS at UofT.
 
 To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
 
