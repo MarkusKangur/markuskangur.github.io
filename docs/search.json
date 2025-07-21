@@ -11,6 +11,76 @@
     "href": "index.html",
     "title": "Home",
     "section": "",
-    "text": "Welcome to my personal website. I am a masters student at the DOSS at UofT.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
+    "text": "Welcome to my personal website. I do freelance data science and statistical consulting. Past clients include the City of Mississauga.\nI am an incoming PhD student at the Dalla Lana School of Public Health at the University of Toronto co-supervised by Dr. Shelley Bull and Dr. Michael Wainberg."
+  },
+  {
+    "objectID": "index.html#education",
+    "href": "index.html#education",
+    "title": "Home",
+    "section": "Education",
+    "text": "Education\n\nUniversity of Toronto Mississauga | HBSc Mathematics & Statistics (2024)\nUniversity of Toronto | MSc Statistics (2025)\nUniversity of Toronto | PhD Biostatistics (2029)"
+  },
+  {
+    "objectID": "index.html#past-work",
+    "href": "index.html#past-work",
+    "title": "Home",
+    "section": "Past Work",
+    "text": "Past Work\nI was supported by a grant from the Center for Urban Environments and worked to develop a groundwater mapping database.\nI modelled plankton species."
+  },
+  {
+    "objectID": "index.html#interesting-math-and-statistics-questions",
+    "href": "index.html#interesting-math-and-statistics-questions",
+    "title": "Home",
+    "section": "Interesting Math and Statistics Questions",
+    "text": "Interesting Math and Statistics Questions\nI did a supervised research course with Dr. Mike Pawliuk (link) on Ramsey Theory. Some interesting questions.\nRomeo and Juliet problem."
+  },
+  {
+    "objectID": "index.html#philosophy",
+    "href": "index.html#philosophy",
+    "title": "Home",
+    "section": "Philosophy",
+    "text": "Philosophy\nI believe data-driven decision making has the power to change the world. I tell stories with data. Data, statistics, and modelling should be tools used to improve our lives and the environment, not sell us more products."
+  },
+  {
+    "objectID": "index.html#interests",
+    "href": "index.html#interests",
+    "title": "Home",
+    "section": "Interests",
+    "text": "Interests\nI particularly enjoy applications to the natural world. - Wetlands - Groundwater - Water pollution - Plankton - Genetics\nPast work swamps paper\nI love geographical data and think maps are wonderful tools for visualization. They are also fun to play with.\nTalk to me about trees! I was forestry champion! in 2018 Ontario Envirothon.\nFun stuff: Outside of modeling, I play racquet sports like tennis and squash, love the piano, and take cool pictures of nature. Exploring ontario parks and hiking (make map of all the parks!)\nI write piano music as a hobby.\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "problems.html",
+    "href": "problems.html",
+    "title": "Interesting Problems",
+    "section": "",
+    "text": "Here is a collection of interesting problems and observations in math, probability, and statistics I have either thought up myself or come across at some point."
+  },
+  {
+    "objectID": "problems.html#romeo-and-juliet",
+    "href": "problems.html#romeo-and-juliet",
+    "title": "Interesting Problems",
+    "section": "Romeo and Juliet",
+    "text": "Romeo and Juliet\nStatement: I saw this problem on an instagram post a while back (the comments section was littered with ludicrous answers!). Suppose Romeo and Juliet each arrive at a random time between 8am and 9am. They will each wait 15 minutes after arrival before leaving. What is the probability they will meet?\nSolution: Since they arrive randomly over the course of an hour, let A∼Unif(0,1)A \\sim Unif(0,1) and B∼Unif(0,1)B \\sim Unif(0,1) be random variables for the arrival time of Romeo and Juliet respectively (0 is 8am). If their arrival times are within 15 minutes of each other, then they will meet. So we are interested in the distribution of A−BA - B, and the quantity P(|A−B|&lt;0.25)P(|A-B| &lt; 0.25), since 15 minutes is 0.25 hours.\nSince AA and BB are independent, we have their joint CDF as F(a,b)=F(a)×F(b)=abF(a,b) = F(a) \\times F(b) = ab for 0≤a≤10 \\leq a \\leq 1 and 0≤b≤10 \\leq b \\leq 1. Over the same domain, their PDF is f(a,b)=1f(a,b) = 1. To find the CDF for U=|A−B|U = |A-B|, we integrate over the region R(x)={0≤a≤1,0≤b≤1:|a−b|≤x}R(x) = \\{ 0 \\leq a \\leq 1, 0 \\leq b \\leq 1 : |a-b| \\leq x\\}.\nF(u)=P(U≤x)=∫R(x)1dA\nF(u) = P(U \\leq x) = \\int_{R(x)}1dA\n The region R(x)R(x) can be represented as:\n\n\n\n\n\n\n\n\n\nSince we are just calculating the area of the shaded area, it is faster to compute the area of the complement, the two triangles above and below.\nF(u)=1−2(12⋅(1−x)2)=1−(1−x)2F(u) = 1 - 2(\\frac{1}{2} \\cdot (1-x)^2) = 1-(1-x)^2\nThus F(0.25)=1−(1−0.25)2=7/16F(0.25) = 1 - (1-0.25)^2 = 7/16, indicating Romeo and Juliet have a 7/16=43.75%7/16 = 43.75\\% chance of meeting, meaning it is more likely that they don’t meet. We can verify this number using a simulation.\n\n# Run a simulation to verify the results\nn_sim = 10000000\nromeo = runif(n_sim)\njuliet = runif(n_sim)\nmeet = sum(abs(romeo - juliet) &lt;= 0.25)\ncat(\"Percentage: \", round(meet * 100 / n_sim, 2), \"%\", \"\\n\")\n\nPercentage:  43.75 % \n\n\nAlternatively, the CDF of A-B (no absolute values) is given by 12(x+1)2\\frac{1}{2}(x+1)^2 for −1≤x≤0-1 \\leq x \\leq 0 and by 1−12(x−1)21-\\frac{1}{2}(x-1)^2 for 0≤x≤10 \\leq x \\leq 1. Taking derivatives gives the density function: f(x)=x+1f(x) = x+1 and f(x)=1−xf(x) = 1-x for the two cases respectively (like a triangle).\n\n# What does the empirical density look like?\npoints = romeo - juliet \nplot(density(points))\n\n\n\n\n\n\n\n# What if we assume they are normally distirubuted? Mean of 0.5 (on the half hour)\ncurve(dnorm(x, mean = 0.5, 0.5), from=-3, to=4)\n\n\n\n\n\n\n\n# Tune the variance parameter so that 99% of the observations fall within [0,1]\ncurve(dnorm(x, mean = 0.5, 0.19), from=-0.5, to=1.5)\n\n\n\n\n\n\n\nromeo = rnorm(n_sim, mean = 0.5, sd = 0.19)\njuliet = rnorm(n_sim, mean = 0.5 ,sd = 0.19)\nmeet = sum(abs(romeo - juliet) &lt;= 0.25)\ncat(\"Percentage: \", round(meet * 100 / n_sim, 2), \"%\", \"\\n\")\n\nPercentage:  64.76 % \n\n\nExtension: People don’t really arrive randomly in an interval. Typically, we set a time, and arrive with some variation around that time. Suppose Romeo and Juliet agree to meet at 8:30am. We model their arrival times as independent normal distributions with means at 8:30am, and variance sufficiently small such that P(0≤A≤1)≥0.95P(0 \\leq A \\leq 1) \\geq 0.95, ie they arrive within 30 minutes of the specificied time 95% of the time."
+  },
+  {
+    "objectID": "problems.html#elevator-waiting-times",
+    "href": "problems.html#elevator-waiting-times",
+    "title": "Interesting Problems",
+    "section": "Elevator Waiting Times",
+    "text": "Elevator Waiting Times\nInspired by a problem from (link). Going to visit my girlfriend, who lives in a building with 30 floors (I enter from P2). Why does it take forever? This is exactly the same as the birthday problem!\n\nnum = 366\nprod(seq(365 - (num-1), 365, 1)/365)\n\n[1] 0\n\n# Elevator problem\nprob &lt;- function(num){\n  prod(seq(30 - (num-1), 30, 1)/30)\n}\nres = c()\nfor (num in seq(1, 31)) {\n  res = c(res, round(prob(num) * 100, 2))\n}\nplot(res, type = \"l\", ylab = \"Prob All Different Floors\")"
+  },
+  {
+    "objectID": "problems.html#the-statisticians-pigenhole-principle",
+    "href": "problems.html#the-statisticians-pigenhole-principle",
+    "title": "Interesting Problems",
+    "section": "The Statistician’s Pigenhole Principle",
+    "text": "The Statistician’s Pigenhole Principle\nWhile in the above problem the pigeonhole principle guarantees a collision with 31 &gt; 30 people in the elevator, the distribution above tells us that this is extremely unlikely to happen.\nStatisticians are always so interested in 95% confidence statements - in the above problem, about 95% of the time a collision will occur with only 13 people in the room (a 60% reduction). In exchange for a small amount of uncertainty, we can drastically lower the bound required.\nTheorem: The Statistician’s Pigeonhole Principle\nWhat about kk collisions? Or kk people on the same floor?"
+  },
+  {
+    "objectID": "problems.html#the-statisticians-pigeonhole-principle",
+    "href": "problems.html#the-statisticians-pigeonhole-principle",
+    "title": "Interesting Problems",
+    "section": "The Statistician’s Pigeonhole Principle",
+    "text": "The Statistician’s Pigeonhole Principle\nWhile in the above problem the pigeonhole principle guarantees a collision with 31 &gt; 30 people in the elevator, the distribution above tells us that this is extremely unlikely to happen.\nStatisticians are always so interested in 95% confidence statements - in the above problem, about 95% of the time a collision will occur with only 13 people in the room (a 60% reduction). In exchange for a small amount of uncertainty, we can drastically lower the bound required.\nTheorem: The Statistician’s Pigeonhole Principle\nWhat about kk collisions? Or kk people on the same floor?"
   }
 ]

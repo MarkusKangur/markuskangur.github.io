@@ -9,14 +9,16 @@ website:
       - href: index.qmd
         text: Home
       - about.qmd
+      - problems.qmd
 
 format:
   html:
+    html-math-method: mathml
     theme:
       - cosmo
       - brand
     css: styles.css
     toc: true
 
-editor: visual
+editor: source
 

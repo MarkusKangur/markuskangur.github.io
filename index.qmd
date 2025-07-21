@@ -2,9 +2,46 @@
 title: "Home"
 ---
 
-Welcome to my personal website. I am a masters student at the DOSS at UofT.
+Welcome to my personal website. I do freelance data science and statistical consulting. Past clients include the City of Mississauga.
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+I am an incoming PhD student at the Dalla Lana School of Public Health at the University of Toronto  co-supervised by [Dr. Shelley Bull](https://www.dlsph.utoronto.ca/faculty-profile/bull-shelley/){target="_blank"} and [Dr. Michael Wainberg](https://www.dlsph.utoronto.ca/faculty-profile/wainberg-michael/){target="_blank"}.
+
+## Education
+
+* University of Toronto Mississauga \| HBSc Mathematics & Statistics (2024)
+* University of Toronto \| MSc Statistics (2025)
+* University of Toronto \| PhD Biostatistics (2029)
+
+## Past Work
+
+I was supported by a grant from the [Center for Urban Environments](){target="_blank"} and worked to develop a groundwater mapping database.
+
+I modelled plankton species.
+
+## Interesting Math and Statistics Questions
+
+I did a supervised research course with Dr. Mike Pawliuk (link) on Ramsey Theory. Some interesting questions.
+
+Romeo and Juliet problem. 
+
+## Philosophy
+
+I believe data-driven decision making has the power to change the world. I tell stories with data. Data, statistics, and modelling should be tools used to improve our lives and the environment, not sell us more products.
+
+## Interests
+
+I particularly enjoy applications to the natural world. - Wetlands - Groundwater - Water pollution - Plankton - Genetics
+
+Past work [swamps paper](https://iopscience.iop.org/article/10.1088/1748-9326/ac63d5){target="_blank"}
+
+I love geographical data and think maps are wonderful tools for visualization. They are also fun to play with.
+
+Talk to me about trees! I was forestry champion! in 2018 Ontario Envirothon.
+
+Fun stuff: Outside of modeling, I play racquet sports like tennis and squash, love the piano, and take cool pictures of nature. Exploring ontario parks and hiking (make map of all the parks!)
+
+I write piano music as a hobby.
+
 
 ```{r}
 1 + 1
